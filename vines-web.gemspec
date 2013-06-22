@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'coffee-script', '~> 2.2.0'
   s.add_development_dependency 'coffee-script-source', '~> 1.6.2'
+  s.add_development_dependency 'sass', '~> 3.2.9'
   s.add_development_dependency 'sprockets', '~> 2.10.0'
   s.add_development_dependency 'uglifier', '~> 2.1.1'
   s.add_development_dependency 'rack', '~> 1.5.2'
