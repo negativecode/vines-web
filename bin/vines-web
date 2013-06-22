@@ -52,7 +52,6 @@ def parse(args)
 end
 
 opts = parse(ARGV)
-check_config(opts)
 command = Vines::Web::Command.const_get(opts[:command].capitalize).new
 begin
   command.run(opts)
