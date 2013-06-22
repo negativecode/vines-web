@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'vines/web'
+
+COMMANDS = %w[init install]
+
+def parse(args)
+  options = {}
+  parser = OptionParser.new do |opts|
+    opts.banner = "Usage: vines-web [options] #{COMMANDS.join('|')}"
+
+    opts.separator ""
+    opts.separator "Common options:"
+
+    opts.on('-h', '--help', 'Show this message') do |help|
+      options[:help] = help
+    end
+
+    opts.on('-v', '--version', 'Show version') do |version|
+      options[:version] = version
+    end
+  end
+
+  begin
+    parser.parse!(args)
+  rescue
+    puts parser
+    exit(1)
+  end
+
+  if options[:version]
+    puts Vines::Web::VERSION
+    exit
+  end
+
+  if options[:help]
+    puts parser
+    exit
+  end
+
+  command = args.shift
+  unless COMMANDS.include?(command)
+    puts parser
+    exit(1)
+  end
+
+  options.tap do |opts|
+    opts[:args]    = args
+    opts[:command] = command
+  end
+end
+
+opts = parse(ARGV)
+check_config(opts)
+command = Vines::Web::Command.const_get(opts[:command].capitalize).new
+begin
+  command.run(opts)
+rescue SystemExit
+  # do nothing
+rescue Exception => e
+  puts e.message
+  exit(1)
+end
