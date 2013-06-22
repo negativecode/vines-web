@@ -7,6 +7,7 @@ module Vines
 
           dir = opts[:args].first.downcase
           dir = File.expand_path(dir)
+          Dir.mkdir(dir) unless File.exists?(dir)
 
           web = File.expand_path("../../../../../public", __FILE__)
           FileUtils.cp_r(Dir.glob("#{web}/*"), dir)
