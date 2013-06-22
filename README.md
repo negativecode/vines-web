@@ -24,6 +24,7 @@ needed OS packages, as well as Ruby itself, are available at
 ```
 $ script/bootstrap
 $ script/tests
+$ script/server
 ```
 
 ## Contact
