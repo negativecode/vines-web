@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage     = 'http://www.getvines.org'
   s.license      = 'MIT'
 
-  s.files        = Dir['[A-Z]*', 'vines-web.gemspec', 'public/**/*'] - ['Gemfile.lock']
+  s.files        = Dir['[A-Z]*', 'config.ru', 'vines-web.gemspec', '{app,bin,lib,public}/**/*'] - ['Gemfile.lock']
   s.executables  = %w[vines-web]
   s.require_path = 'lib'
 
