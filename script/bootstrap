@@ -3,6 +3,6 @@
 set -e
 
 echo "==> Installing gem dependencies . . ."
-bundle install --binstubs --path .bundle/gems
+bundle install --binstubs .bundle/bin --path .bundle/gems
 
 echo "==> vines-web is installed!"
