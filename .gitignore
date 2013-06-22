@@ -2,6 +2,4 @@
 .bundle
 public/assets
 Gemfile.lock
-bin
 pkg
-
