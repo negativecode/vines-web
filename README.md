@@ -9,7 +9,7 @@ Additional documentation can be found at [getvines.org](http://www.getvines.org/
 
 ```
 $ gem install vines vines-web
-$ vines init wonderland.lit
+$ vines-web init wonderland.lit
 $ cd wonderland.lit && vines start
 ```
 
