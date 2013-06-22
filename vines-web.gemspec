@@ -1,6 +1,8 @@
+require './lib/vines/web/version'
+
 Gem::Specification.new do |s|
   s.name         = 'vines-web'
-  s.version      = '0.1.0'
+  s.version      = Vines::Web::VERSION
   s.summary      = %q[A web chat client for the Vines XMPP chat server.]
   s.description  = %q[Useful for testing the server's BOSH support.]
 
@@ -10,6 +12,7 @@ Gem::Specification.new do |s|
   s.license      = 'MIT'
 
   s.files        = Dir['[A-Z]*', 'vines-web.gemspec', 'public/**/*'] - ['Gemfile.lock']
+  s.executables  = %w[vines-web]
   s.require_path = 'lib'
 
   s.add_development_dependency 'coffee-script', '~> 2.2.0'
