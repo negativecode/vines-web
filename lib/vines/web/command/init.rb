@@ -13,7 +13,9 @@ module Vines
 
           web = File.expand_path('../../../../../public', __FILE__)
           FileUtils.cp_r(Dir.glob("#{web}/*"), "#{domain}/web")
+
           puts "Web assets installed: #{domain}"
+          puts "Run 'cd #{domain} && vines start' to begin"
 
           `type open && open http://localhost:5280/`
         end
