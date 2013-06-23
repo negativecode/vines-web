@@ -19,7 +19,7 @@ task :assets do
   env.append_path 'app/assets/stylesheets'
   env.js_compressor = :uglifier
 
-  assets = %w[application.js vendor.js lib.js application.css]
+  assets = %w[application.js application.css]
   assets.each do |asset|
     env[asset].write_to "public/assets/#{asset}"
   end
