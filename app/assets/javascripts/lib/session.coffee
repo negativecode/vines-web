@@ -1,6 +1,6 @@
 class @Session
-  constructor: ->
-    @xmpp = new Strophe.Connection '/xmpp'
+  constructor: (url = '/xmpp') ->
+    @xmpp = new Strophe.Connection url
     @roster = {}
     @listeners =
       card:     []
